@@ -72,8 +72,30 @@ return packer.startup(function(use)
 
   use { 'folke/which-key.nvim' }
 
+  -- Lualine
   use { 'nvim-tree/nvim-web-devicons' }
   use { 'nvim-lualine/lualine.nvim' }
+
+  -- NeoTree
+  use { 'MunifTanjim/nui.nvim'}
+  use { 's1n7ax/nvim-window-picker',
+    config = function()
+            require 'window-picker'.setup({
+                filter_rules = {
+                    include_current_win = false,
+                    autoselect_one = true,
+                    -- filter using buffer options
+                    bo = {
+                        -- if the file type is one of following, the window will be ignored
+                        filetype = { 'neo-tree', "neo-tree-popup", "notify" },
+                        -- if the buffer type is one of following, the window will be ignored
+                        buftype = { 'terminal', "quickfix" },
+                    },
+            },
+        })
+        end,
+  }
+  use { 'nvim-neo-tree/neo-tree.nvim'  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
