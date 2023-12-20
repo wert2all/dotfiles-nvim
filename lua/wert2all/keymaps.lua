@@ -25,7 +25,7 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Neotree<cr>", opts)
+keymap("n", "<leader>e", ":Neotree toggle<cr>", opts)
 
 -- Resize with arrows
 --keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -66,7 +66,7 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 
-local builtin = require('telescope.builtin')
+local builtin = require "telescope.builtin"
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, opts)
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, opts)
@@ -77,3 +77,5 @@ vim.keymap.set('n', '<leader>fr', builtin.oldfiles, opts)
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, opts)
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, opts)
 vim.keymap.set('n', '<leader>gs', builtin.git_status, opts)
+
+
