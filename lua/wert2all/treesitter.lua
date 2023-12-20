@@ -8,7 +8,7 @@ print( "Treesitter configs")
 configs.setup{
   ensure_installed = {
     "lua","javascript", "php",
-    "angular", 
+  --  "angular", 
     "bash", "graphql", "html", "json", "scss", "css", "sql", "typescript", "kotlin", "yaml"
   },
   sync_install = false,
